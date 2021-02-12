@@ -42,18 +42,23 @@
   }
 
   &__rating {
-    @include flex-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding-bottom: 20px;
   }
 
+  &__review {
+    justify-self: end;
+  }
+
   &__stars {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 15px);
+    grid-template-rows: 15px;
+    grid-gap: 4px;
   }
 
   &__star {
-    width: 15px;
-    height: 15px;
-    margin-right: 4px;
     background: url(/images/star.svg) no-repeat center;
 
     &--active {
@@ -62,20 +67,24 @@
   }
 
   &__price {
-    @include flex-between;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
     padding-bottom: 20px;
 
     &-value {
+      justify-self: end;
       font-size: 16px;
       font-weight: $bold-font;
     }
   }
 
   &__link {
-    @include centered;
-    width: $full-size;
-    height: 40px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 38px;
+    grid-template-columns: 1fr;
     font-size: 14px;
     font-weight: $bold-font;
     color: #fff;
